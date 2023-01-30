@@ -14,7 +14,7 @@ def path(maze, Alice):
                 coin_count += 1
     finish = 2 ** coin_count  -1
                 
-    ## state variable: 
+    ## state variable: row x col x collected coins x step
     seen = set()
     if maze[0][0] == 2:
         start_state = (0, 0, 1)
@@ -24,9 +24,8 @@ def path(maze, Alice):
         q.append( (0, 0, 0, 0) )
         
     seen.add( start_state )
-    #def shortestPath(maze, Alice):
+   
     while q:
-       
         i, j, coins, step = q.popleft()
         if i == Alice[0] and j == Alice[1] and coins == finish:
             return step
@@ -44,7 +43,7 @@ def path(maze, Alice):
                 if (a, b, next_coins) not in seen:
                     seen.add( (a, b, next_coins) )
                     q.append( (a, b, next_coins, step + 1) )
-    #print(coin_map)           
+       
     return -1
     
 print( path(maze, Alice) )
