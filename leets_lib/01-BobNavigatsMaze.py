@@ -47,16 +47,4 @@ def path(maze, Alice):
     return -1
     
 print( path(maze, Alice) )
-
-
-                    
-                    
-                
-            
-    
-   
-
-
-    
-    
-    
+       
